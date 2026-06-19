@@ -1,0 +1,19 @@
+@use "~/styles/helpers" as *;
+
+.button {
+  @include flex-center(true);
+  @include button-reset;
+	@include fluid-text(24, 16);
+
+  color: var(--color-light);
+	font-weight: 600;
+	background-color: var(--color-accent);
+	height: var(--button-height);
+	padding-inline: rem(25);
+	border: var(--border);
+	column-gap: rem(20);
+
+	& svg {
+		transform: rotate(45deg);
+	}
+}

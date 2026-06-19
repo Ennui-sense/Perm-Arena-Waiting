@@ -1,0 +1,49 @@
+@use "~/styles/helpers" as *;
+
+.menu-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background: var(--color-light);
+  padding-block: rem(140) rem(50);
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__contacts {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: rem(12);
+  }
+
+  &__socials {
+    display: flex;
+    column-gap: rem(12);
+  }
+
+  &__button {
+    @include button-reset;
+
+    position: absolute;
+    top: rem(25);
+    right: rem(25);
+
+    & svg * {
+      stroke: var(--color-dark);
+    }
+
+    &:active {
+      & svg * {
+        stroke: var(--color-light);
+      }
+    }
+  }
+}

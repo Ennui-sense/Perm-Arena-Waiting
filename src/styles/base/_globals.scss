@@ -1,0 +1,49 @@
+@use "./../helpers" as *;
+
+body {
+  @include fluid-text(30, 16);
+
+  font-family: var(--font-family-base);
+  font-weight: 400;
+  color: var(--color-light);
+  background: linear-gradient(138deg, #06010d 0%, #060321 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a,
+button,
+input,
+label,
+textarea,
+select,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  font-weight: 400;
+  font-family: var(--font-family-accent);
+	text-transform: uppercase;
+}
+
+h1,
+.h1 {
+  @include fluid-text(60, 28);
+
+  line-height: 1.3;
+}
+
+:not(input):focus-visible {
+  outline: rem(2) dashed red;
+  outline-offset: rem(4);
+  transition-duration: 0s !important;
+}

@@ -1,0 +1,9 @@
+@use "~/styles/helpers" as *;
+
+.logo {
+  &__image {
+    @include mobile {
+      width: rem(120);
+    }
+  }
+}

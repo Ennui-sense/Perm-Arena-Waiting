@@ -1,0 +1,30 @@
+@use "~/styles/helpers" as *;
+
+.menu {
+  &__list {
+    display: flex;
+    align-items: center;
+    column-gap: rem(40);
+
+    @include mobile {
+      flex-direction: column;
+      row-gap: rem(15);
+    }
+  }
+
+  &__link {
+    font-size: rem(24);
+    text-transform: uppercase;
+
+    &:not(.menu__link--active) {
+      @include hover(false) {
+        opacity: 0.6;
+      }
+    }
+
+    &--active {
+      color: var(--color-accent);
+			pointer-events: none;
+    }
+  }
+}

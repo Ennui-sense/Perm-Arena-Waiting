@@ -1,0 +1,56 @@
+@use "~/styles/helpers" as *;
+
+.hero-link {
+  @include flex-center(true);
+  @include fluid-text(32, 20);
+
+  flex-direction: column;
+  font-weight: 600;
+  animation: shift infinite 3s;
+  position: relative;
+	color: var(--color-light);
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 100%;
+    background-color: var(--color-dark);
+    filter: blur(rem(200));
+    opacity: 0;
+		z-index: -1;
+    transition-duration: var(--transition-duration);
+  }
+
+  @include hover {
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  & svg {
+    @include mobile {
+      height: rem(80)
+    }
+  }
+	
+	&__button {
+		&:first-child {
+			margin-bottom: rem(20);
+		}
+	}
+}
+
+@keyframes shift {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(rem(30));
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

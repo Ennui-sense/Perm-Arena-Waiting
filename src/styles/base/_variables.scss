@@ -1,0 +1,28 @@
+@use "./../helpers" as *;
+
+:root {
+  --color-light: #fff;
+  --color-accent: #6c42cb;
+
+  --font-family-accent: "Unbounded", sans-serif;
+  --font-family-base: "Manrope", sans-serif;
+
+  --container-width: #{rem(1660)};
+  --container-padding-x: #{rem(20)};
+
+  --border-radius: #{rem(30)};
+
+  --button-height: #{rem(60)};
+
+  --border: #{rem(5)} solid rgba(255, 255, 255, 0.1);;
+
+  --transition-duration: 0.25s;
+
+  @include tablet {
+    --button-height: #{rem(50)};
+  }
+
+  @include mobile {
+    --button-height: #{rem(40)};
+  }
+}

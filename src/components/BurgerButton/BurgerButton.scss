@@ -1,0 +1,13 @@
+@use "~/styles/helpers" as *;
+
+.burger-button {
+  @include square(rem(40));
+  @include flex-center(true);
+  @include button-reset;
+
+  color: var(--color-dark);
+
+  &:active {
+    opacity: 0.6;
+  }
+}
