@@ -31,10 +31,14 @@
     @include mobile {
       @include square(rem(40));
     }
+
+    @include mobile-s {
+      @include square(rem(35));
+    }
   }
 
   &__value {
-    @include fluid-text(100, 40);
+    @include fluid-text(100, 36);
 
     position: absolute;
     z-index: 5;
