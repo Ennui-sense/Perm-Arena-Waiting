@@ -9,6 +9,10 @@
   z-index: 100;
   transition-duration: var(--transition-duration);
 
+	&--changed {
+		background-color: rgba(0, 0, 0, 0.25);
+	}
+
 	@include desktop {
 		padding-block: rem(32);
 	}
