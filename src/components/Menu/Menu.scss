@@ -8,23 +8,43 @@
 
     @include mobile {
       flex-direction: column;
-      row-gap: rem(15);
+      row-gap: rem(24);
     }
   }
 
   &__link {
-    font-size: rem(24);
+    font-size: rem(18);
     text-transform: uppercase;
+    position: relative;
+		font-weight: 600;
+
+    &::after {
+      content: "";
+      height: rem(3);
+      width: 0;
+      position: absolute;
+      background-color: var(--color-gray);
+      top: 100%;
+      left: 50%;
+			transform: translateX(-50%);
+			transition-duration: var(--transition-duration);
+    }
 
     &:not(.menu__link--active) {
       @include hover(false) {
-        opacity: 0.6;
+				&::after {
+					width: 100%;
+				}
       }
     }
 
     &--active {
-      color: var(--color-accent);
-			pointer-events: none;
+      pointer-events: none;
+
+      &::after {
+        background-color: var(--color-accent);
+				width: 100%;
+      }
     }
   }
 }

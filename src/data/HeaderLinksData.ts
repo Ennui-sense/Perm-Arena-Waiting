@@ -2,12 +2,12 @@ import type { MenuLink } from "~/types"
 
 export const MenuLinksData: MenuLink[] = [
   {
-    label: "Главная",
+    label: "Галерея",
     id: 1,
     href: "/"
   },
   {
-    label: "Галерея",
+    label: "Новости",
     id: 2,
     href: "/"
   },

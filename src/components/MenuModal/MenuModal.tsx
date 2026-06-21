@@ -6,6 +6,7 @@ import Menu from "../Menu/Menu";
 
 import VkIcon from "~/assets/icons/vk.svg?react";
 import TgIcon from "~/assets/icons/tg.svg?react";
+import MaxIcon from "~/assets/icons/max.svg?react";
 import CrossIcon from "~/assets/icons/cross.svg?react";
 
 interface IMenuModal {
@@ -25,17 +26,28 @@ const MenuModal = ({ closeModal }: IMenuModal) => {
         <Menu />
 
         <div className="menu-modal__contacts">
-          <a href="tel:+73422233313" className="menu-modal__link">
-            +7 (342) 223-33-13
+          <a href="tel:+70123456789" className="menu-modal__link">
+            +7 (012) 345-67-89
           </a>
-          <p className="menu-modal__text">г. Пермь, ул. Белинского, 6Б</p>
-          <p className="menu-modal__text">12:00 - 00:00</p>
+          <p className="menu-modal__text">ул. Локомотивная, Пермь</p>
           <div className="menu-modal__socials">
             <a
-              href="https://vk.com/kinkaliperm"
+              href="/"
               className="menu-modal__socials-link"
             >
               <VkIcon />
+            </a>
+            <a
+              href="/"
+              className="menu-modal__socials-link"
+            >
+              <TgIcon />
+            </a>
+            <a
+              href="/"
+              className="menu-modal__socials-link"
+            >
+              <MaxIcon />
             </a>
           </div>
         </div>

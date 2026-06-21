@@ -7,7 +7,8 @@
   z-index: 100;
   width: 100vw;
   height: 100vh;
-  background: var(--color-light);
+  backdrop-filter: blur(rem(10));
+  background: rgba(6, 3, 33, 0.16);
   padding-block: rem(140) rem(50);
 
   &__inner {
@@ -21,7 +22,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: rem(12);
+    row-gap: rem(16);
   }
 
   &__socials {
@@ -35,14 +36,15 @@
     position: absolute;
     top: rem(25);
     right: rem(25);
+		z-index: 100;
 
     & svg * {
-      stroke: var(--color-dark);
+      stroke: var(--color-light);
     }
 
     &:active {
       & svg * {
-        stroke: var(--color-light);
+        stroke: var(--color-gray);
       }
     }
   }

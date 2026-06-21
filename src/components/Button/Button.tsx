@@ -10,7 +10,7 @@ interface IButton {
 
 const Button = ({ className, children }: IButton) => {
   return (
-    <button className={clsx("button", className, "glow-effect")} type="button">
+    <button className={clsx("button", className)} type="button">
       <ArrowIcon />
       {children}
     </button>

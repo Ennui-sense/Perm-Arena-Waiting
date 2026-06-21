@@ -3,17 +3,31 @@
 .button {
   @include flex-center(true);
   @include button-reset;
-	@include fluid-text(24, 16);
+  @include fluid-text(24, 16);
 
   color: var(--color-light);
-	font-weight: 600;
-	background-color: var(--color-accent);
-	height: var(--button-height);
-	padding-inline: rem(25);
-	border: var(--border);
-	column-gap: rem(20);
+  font-weight: 600;
+  background-color: var(--color-accent);
+  height: var(--button-height);
+  padding-inline: rem(32);
+  column-gap: rem(20);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
 
-	& svg {
-		transform: rotate(45deg);
+  & svg {
+    transform: rotate(45deg);
+
+		@include mobile {
+			width: rem(20);
+		}
+  }
+
+	@include tablet {
+		padding-inline: rem(24);
+	}
+
+	@include mobile {
+		padding-inline: rem(16);
+		column-gap: rem(10);
 	}
 }

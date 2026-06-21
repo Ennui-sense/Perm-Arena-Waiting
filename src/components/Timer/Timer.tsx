@@ -1,17 +1,18 @@
-import "./Timer.scss";
+﻿import "./Timer.scss";
 
-import { useState, useEffect } from "react";
+import { Fragment, useState, useEffect } from "react";
 
 import TimerCard from "../TimerCard/TimerCard";
 import clsx from "clsx";
 
-interface ITimerCard {
+interface ITimer {
   className?: string;
 }
 
-const Timer = ({ className }: ITimerCard) => {
+const Timer = ({ className }: ITimer) => {
   const [currentDate, setCurrentDate] = useState(new Date());
-  const targetDate = new Date(2027, 12, 1, 0, 0, 0, 0);
+
+  const targetDate = new Date(2027, 11, 1, 0, 0, 0, 0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -29,44 +30,52 @@ const Timer = ({ className }: ITimerCard) => {
     return String(number).split("");
   };
 
-  const difference = targetDate.getTime() - currentDate.getTime();
+  const difference = Math.max(targetDate.getTime() - currentDate.getTime(), 0);
 
-  const days = formatNumber(Math.floor(difference / (1000 * 60 * 60 * 24)));
-  const hours = formatNumber(Math.floor((difference / (1000 * 60 * 60)) % 24));
-  const minutes = formatNumber(Math.floor((difference / (1000 * 60)) % 60));
-  const seconds = formatNumber(Math.floor((difference / 1000) % 60));
-
-  const result = [...days, ":", ...hours, ":", ...minutes, ":", ...seconds];
+  const result = [
+    {
+      label: "дней",
+      value: formatNumber(Math.floor(difference / (1000 * 60 * 60 * 24))),
+    },
+    {
+      label: "часов",
+      value: formatNumber(Math.floor((difference / (1000 * 60 * 60)) % 24)),
+    },
+    {
+      label: "минут",
+      value: formatNumber(Math.floor((difference / (1000 * 60)) % 60)),
+    },
+    {
+      label: "секунд",
+      value: formatNumber(Math.floor((difference / 1000) % 60)),
+    },
+  ];
 
   return (
-    <div className={clsx("hero-timer", className)}>
-      <p className="hero-timer__title">До предполагаемого открытия осталось:</p>
+    <div className={clsx("timer", className)}>
+      <p className="timer__title">До предполагаемого открытия осталось:</p>
 
-      <div className="hero-timer__body">
-        {result.map((value, index) => (
-          <TimerCard value={value} key={value + index} />
+      <div className="timer__body">
+        {result.map(({ label, value }, groupIndex) => (
+          <Fragment key={label}>
+            <div className="timer__unit">
+              <div className="timer__cards">
+                {value.map((digit, index) => (
+                  <TimerCard value={digit} key={`${label}-${index}`} />
+                ))}
+              </div>
+
+              <p className="timer__label">{label}</p>
+            </div>
+
+            {groupIndex < result.length - 1 && (
+              <div className="timer__separator">
+                <TimerCard value=":" />
+              </div>
+            )}
+          </Fragment>
         ))}
       </div>
-
-      <svg className="hero-timer__svg-filter" aria-hidden="true">
-        <filter id="glass-distortion">
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency="0.01 0.01"
-            numOctaves="1"
-            seed="5"
-            result="turbulence"
-          />
-          <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
-          <feDisplacementMap
-            in="SourceGraphic"
-            in2="softMap"
-            scale="80"
-            xChannelSelector="R"
-            yChannelSelector="G"
-          />
-        </filter>
-      </svg>
     </div>
   );
 };

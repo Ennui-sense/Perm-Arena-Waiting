@@ -2,6 +2,10 @@
 
 .logo {
   &__image {
+    @include tablet {
+      width: rem(150);
+    }
+
     @include mobile {
       width: rem(120);
     }

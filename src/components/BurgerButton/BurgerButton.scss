@@ -2,12 +2,32 @@
 
 .burger-button {
   @include square(rem(40));
-  @include flex-center(true);
   @include button-reset;
 
+	display: flex;
+	flex-direction: column;
+	align-items: end;
   color: var(--color-dark);
+	row-gap: rem(10);
 
   &:active {
     opacity: 0.6;
   }
+
+	&__line {
+		height: rem(2);
+		background-color: var(--color-light);
+
+		&:first-child {
+			width: 60%;
+		}
+
+		&:nth-child(2) {
+			width: 80%;
+		}
+
+		&:nth-child(3) {
+			width: 100%;
+		}
+	}
 }

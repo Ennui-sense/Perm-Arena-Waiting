@@ -2,36 +2,15 @@
 
 .timer-card {
   display: flex;
+  align-items: center;
   flex-direction: column;
-  row-gap: rem(3);
+  row-gap: rem(2);
   position: relative;
 
-	&::after {
-		content: "";
-		width: 100%;
-		height: rem(3);
-		background-color: #000;
-		position: absolute;
-		top: 50%;
-		left: 0;
-		transform: translateY(-50%);
-		z-index: 100;
-	}
-
   &__part {
-    @include square(rem(100));
+    @include square(rem(75));
 
-    position: relative;
-    overflow: hidden;
-    isolation: isolate;
-
-    background: rgba(139, 92, 246, 0.09);
-
-    box-shadow:
-      0 rem(1) rem(1) rgba(0, 0, 0, 0.18),
-      inset rem(1) rem(1) rem(1) rgba(255, 255, 255, 0.35),
-      inset rem(-1) rem(-1) rem(1) rgba(255, 255, 255, 0.15);
-
+    background: var(--color-gray-dark);
 
     &--top {
       border-radius: var(--border-radius) var(--border-radius) 0 0;
@@ -40,41 +19,27 @@
     &--bottom {
       border-radius: 0 0 var(--border-radius) var(--border-radius);
     }
-  }
 
-  &__glass-effect,
-  &__glass-tint,
-  &__glass-shine {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-  }
+    @include desktop {
+      @include square(rem(60));
+    }
 
-  &__glass-effect {
-    z-index: 0;
-    backdrop-filter: blur(rem(2));
-    -webkit-backdrop-filter: blur(rem(2));
-    filter: url("#glass-distortion");
-  }
+    @include tablet {
+      @include square(rem(50));
+    }
 
-  &__glass-tint {
-    z-index: 1;
-    background: rgba(139, 92, 246, 0.02);
-  }
-
-  &__glass-shine {
-    z-index: 2;
-    box-shadow:
-      inset rem(1) rem(1) rem(1) rgba(255, 255, 255, 0.5),
-      inset rem(-1) rem(-1) rem(1) rgba(255, 255, 255, 0.35);
+    @include mobile {
+      @include square(rem(40));
+    }
   }
 
   &__value {
+    @include fluid-text(100, 40);
+
     position: absolute;
     z-index: 5;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: rem(120);
   }
 }

@@ -10,12 +10,12 @@
   transition-duration: var(--transition-duration);
 
 	@include desktop {
-		padding-block: rem(25);
+		padding-block: rem(32);
 	}
 
-  &--changed {
-    box-shadow: 0 rem(4) rem(4) 0 rgba(0, 0, 0, 0.25);
-  }
+	@include tablet {
+		padding-block: rem(24);
+	}
 
   &__inner {
     display: flex;
@@ -26,28 +26,5 @@
 		@include desktop {
 			row-gap: rem(40)
 		}
-  }
-
-  &__logo {
-    @include desktop {
-      order: 1;
-    }
-
-		@include mobile {
-			order: 0
-		}
-  }
-
-  &__menu {
-    @include desktop {
-      order: 3;
-			width: 100%;
-    }
-  }
-
-  &__button {
-    @include desktop {
-      order: 2;
-    }
   }
 }
