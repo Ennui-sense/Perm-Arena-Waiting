@@ -3,3 +3,5 @@ export type MenuLink = {
   id: number;
   href: string
 };
+
+export type MediaQuery = "mobile-s" | "mobile" | "tablet" | "desktop";
