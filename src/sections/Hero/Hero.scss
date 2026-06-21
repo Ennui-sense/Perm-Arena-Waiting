@@ -10,7 +10,7 @@
   }
 
   @include mobile {
-    padding-bottom: rem(40);
+    padding-block: rem(100) rem(40);
   }
 
   &__inner {
@@ -21,7 +21,7 @@
   }
 
   &__subtitle {
-    @include fluid-text(24, 18);
+    @include fluid-text(24, 16);
 
     margin-bottom: rem(24);
     letter-spacing: 0.12em;

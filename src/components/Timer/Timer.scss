@@ -2,7 +2,7 @@
 
 .timer {
   &__title {
-    @include fluid-text(24, 20);
+    @include fluid-text(24, 16);
 
     text-transform: uppercase;
     letter-spacing: 0.12em;
