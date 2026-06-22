@@ -29,7 +29,7 @@ const MenuModal = ({ closeModal }: IMenuModal) => {
           <a href="tel:+70123456789" className="menu-modal__link">
             +7 (012) 345-67-89
           </a>
-          <p className="menu-modal__text">ул. Локомотивная, Пермь</p>
+          <p className="menu-modal__text">г. Пермь, ул. Локомотивная 16</p>
           <div className="menu-modal__socials">
             <a
               href="/"
