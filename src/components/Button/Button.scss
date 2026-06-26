@@ -8,12 +8,13 @@
   color: var(--color-light);
   font-weight: 600;
   background-color: var(--color-accent);
-  height: var(--button-height);
+  min-height: var(--button-height);
   padding-inline: rem(32);
   column-gap: rem(20);
   letter-spacing: 0.01em;
   text-transform: uppercase;
-
+	border-radius: rem(10);
+	
   & svg {
     transform: rotate(45deg);
 

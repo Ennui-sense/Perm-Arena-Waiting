@@ -12,7 +12,7 @@ interface ITimer {
 const Timer = ({ className }: ITimer) => {
   const [currentDate, setCurrentDate] = useState(new Date());
 
-  const targetDate = new Date(2027, 11, 1, 0, 0, 0, 0);
+  const targetDate = new Date(2027, 5, 30, 0, 0, 0, 0);
 
   useEffect(() => {
     const interval = setInterval(() => {

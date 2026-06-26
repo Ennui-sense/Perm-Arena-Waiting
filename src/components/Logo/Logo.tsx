@@ -9,7 +9,7 @@ interface ILogo {
 const Logo = ({ className, imageSrc }: ILogo) => {
   return (
     <a href="/" className={clsx(className, "logo")}>
-      <img src={imageSrc} alt="" className="logo__image" width={200} height={80} />
+      <img src={imageSrc} alt="" className="logo__image" width={180} height={72} />
     </a>
   )
 }
