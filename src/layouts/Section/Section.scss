@@ -1,0 +1,30 @@
+@use "~/styles/helpers" as *;
+
+.section {
+	margin-bottom: rem(100);
+
+	@include tablet {
+		margin-bottom: rem(80);
+	}
+
+	@include mobile {
+		margin-bottom: rem(70);
+	}
+
+	&__header {
+		margin-bottom: rem(60);
+
+		@include desktop {
+			margin-bottom: rem(50);
+		}
+
+		@include tablet {
+			margin-bottom: ren(40);
+			text-align: center;
+		}
+
+		@include mobile {
+			margin-bottom: rem(30);
+		}
+	}
+}

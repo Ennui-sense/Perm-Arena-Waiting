@@ -7,7 +7,7 @@ import HeroTimer from "~/components/Timer/Timer";
 
 const Hero = () => {
   return (
-    <section className="hero">
+    <section className="hero section">
       <div className="hero__inner container">
         <p className="hero__subtitle">Сердце будущих событий</p>
         <h1 className="hero__title">

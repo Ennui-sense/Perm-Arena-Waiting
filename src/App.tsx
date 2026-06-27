@@ -1,5 +1,6 @@
 import Header from "./layouts/Header/Header";
 import Hero from "./sections/Hero/Hero";
+import Readiness from "./sections/Readiness/Readiness";
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <Readiness />
       </main>
     </>
   );
