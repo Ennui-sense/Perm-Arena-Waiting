@@ -6,7 +6,11 @@
     margin-bottom: rem(90);
 
     @include tablet {
-      margin-bottom: rem(30);
+      margin-bottom: rem(64);
+    }
+
+    @include mobile {
+      margin-bottom: rem(48);
     }
 
     &-icon {
@@ -58,6 +62,10 @@
 
     &-title {
       margin-bottom: rem(16);
+
+			@include mobile {
+				margin-bottom: rem(10);
+			}
     }
   }
 }

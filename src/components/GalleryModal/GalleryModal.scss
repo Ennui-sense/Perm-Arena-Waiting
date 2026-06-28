@@ -1,0 +1,71 @@
+@use "~/styles/helpers" as *;
+
+.gallery-modal {
+	height: 100dvh;
+	position: relative;
+
+	&__inner {
+		@include flex-center;
+
+		height: inherit;
+		min-height: 100%;
+		flex-direction: column;
+		row-gap: rem(48);
+	}
+
+	&__slider {
+		width: 100%;
+	}
+
+	&__slide {
+		@include flex-center;
+
+		height: min(70dvh, rem(720));
+	}
+
+	&__image {
+		display: block;
+		max-width: min(100%, rem(1100));
+		max-height: 100%;
+		width: auto;
+		height: auto;
+		object-fit: contain;
+		border-radius: var(--border-radius-large);
+	}
+
+	&__navigation {
+		display: flex;
+		column-gap: rem(32);
+
+		&-button {
+			@include button-reset;
+			@include flex-center(true);
+			@include square(rem(48));
+
+			border-radius: 50%;
+			color: var(--color-light);
+			background-color: var(--color-gray-dark);
+
+			& svg {
+				width: 25%;
+			}
+
+			&--next {
+				& svg {
+					transform: rotate(180deg)
+				}
+			}
+		}
+	}
+
+	&__close-button {
+		@include button-reset;
+		@include flex-center(true);
+		@include square(rem(48));
+
+		color: var(--color-light);
+		position: absolute;
+		top: rem(32);
+		right: rem(32);
+	}
+}

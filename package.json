@@ -15,7 +15,9 @@
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-intersection-observer": "^10.0.3",
+    "react-modal": "^3.16.3",
     "sass": "^1.101.0",
+    "swiper": "^14.0.0",
     "vite-plugin-svgr": "^5.2.0"
   },
   "devDependencies": {
@@ -23,6 +25,7 @@
     "@types/node": "^24.12.3",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "@types/react-modal": "^3.16.3",
     "@vitejs/plugin-react": "^6.0.1",
     "eslint": "^10.3.0",
     "eslint-plugin-react-hooks": "^7.1.1",

@@ -1,0 +1,59 @@
+@use "~/styles/helpers" as *;
+
+.gallery-card {
+  @include flex-center(true);
+  @include square(100%);
+
+  border-radius: var(--border-radius-large);
+  position: relative;
+	
+	@include mobile {
+		height: rem(300);
+	}
+	
+	@include mobile-s {
+		height: rem(250);
+	}
+
+	@include hover {
+		.gallery-card__bg {
+			&::after {
+				background-color: rgba(0, 0, 0, 0.7);
+			}
+
+			&-image {
+				transform: scale(1.2);
+			}
+		}
+	}
+
+  &__bg {
+    border-radius: inherit;
+    position: absolute;
+    inset: 0;
+		z-index: -1;
+		overflow: hidden;
+		
+		&::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background-color: rgba(0, 0, 0, 0.5);
+			border-radius: inherit;
+			transition-duration: var(--transition-duration);
+		}
+		
+    &-image {
+			@include square(100%);
+			
+      border-radius: inherit;
+			object-fit: cover;
+			transition-duration: var(--transition-duration);
+    }
+
+  }
+
+  &__title {
+		color: var(--color-light);
+  }
+}

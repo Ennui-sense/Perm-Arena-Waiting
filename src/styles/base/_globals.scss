@@ -47,12 +47,12 @@ h1,
 
 h2,
 .h2 {
-  @include fluid-text(20, 18);
+  @include fluid-text(20, 16);
 }
 
 h3,
 .h3 {
-  @include fluid-text(18, 16);
+  @include fluid-text(18, 14);
 }
 
 :not(input):focus-visible {

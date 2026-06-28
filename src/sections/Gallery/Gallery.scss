@@ -1,0 +1,26 @@
+@use "~/styles/helpers" as *;
+
+.gallery {
+  width: 100%;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, rem(400));
+    grid-template-rows: repeat(2, rem(300));
+    gap: rem(20);
+    margin-inline: auto;
+    justify-content: center;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__slider {
+    width: 100%;
+  }
+
+  &__slide {
+    height: auto;
+  }
+}

@@ -13,9 +13,16 @@
 
   &__header {
     margin-bottom: rem(72);
-		display: flex;
-		justify-content: space-between;
-		align-items: end;
+    display: flex;
+    justify-content: space-between;
+    column-gap: rem(32);
+    align-items: end;
+		width: 100%;
+
+		&--center {
+			justify-content: center;
+			text-align: center;
+		}
 
     @include tablet {
       margin-bottom: rem(48);
@@ -26,16 +33,17 @@
     }
   }
 
-	&__title {
-		margin-bottom: rem(20);
+  &__title {
+    margin-bottom: rem(16);
 
-		@include tablet {
-			margin-bottom: rem(16);
-		}
-	}
+    @include mobile {
+      margin-bottom: rem(10);
+    }
+  }
 
-  &__subtitle, &__right-content {
-		@include fluid-text(48, 24);
+  &__subtitle,
+  &__right-content {
+    @include fluid-text(48, 24);
 
     font-weight: 400;
     font-family: var(--font-family-accent);
