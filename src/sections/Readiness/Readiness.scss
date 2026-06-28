@@ -1,62 +1,63 @@
 @use "~/styles/helpers" as *;
 
 .readiness {
-  &__inner {
-    display: flex;
-    align-items: end;
-    column-gap: rem(50);
-
-    @include tablet {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-
   &__visualization {
+    position: relative;
+    margin-bottom: rem(90);
+
     @include tablet {
       margin-bottom: rem(30);
     }
 
-    &-value {
-      @include fluid-text(64, 28);
-
-      font-weight: 500;
-      line-height: 1.22;
-      margin-bottom: rem(15);
-
-      @include tablet {
-        text-align: center;
-      }
-    }
-
     &-icon {
       height: auto;
+      width: 100%;
+      display: block;
 
-      & path[stroke] {
+      path[stroke] {
         fill: transparent;
       }
 
-      @include desktop {
-        width: rem(500);
-      }
+      &--fill {
+        position: absolute;
+        bottom: 0;
+        left: 0;
 
-      @include tablet {
-        width: rem(650);
+        path[stroke] {
+          fill: #fff;
+        }
       }
+    }
 
-      @include mobile {
-        width: rem(500);
-      }
-
-      @include mobile-s {
-        width: 100%;
-      }
+    &-fill {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
     }
   }
 
-  &__text {
-    @include tablet {
-      text-align: center;
+  &__body {
+    display: flex;
+    justify-content: space-between;
+		column-gap: rem(40);
+
+		@include tablet {
+			flex-direction: column;
+			row-gap: rem(32);
+		}
+  }
+
+  &__info {
+    max-width: rem(600);
+
+		@include tablet {
+			max-width: 100%;
+		}
+
+    &-title {
+      margin-bottom: rem(16);
     }
   }
 }

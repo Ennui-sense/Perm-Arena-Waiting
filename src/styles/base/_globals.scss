@@ -1,12 +1,13 @@
 @use "./../helpers" as *;
 
 body {
-  @include fluid-text(28, 18);
+  @include fluid-text(20, 16);
 
   font-family: var(--font-family-base);
   font-weight: 400;
   color: var(--color-light);
-  background: linear-gradient(138deg, #06010d 0%, #060321 100%);
+  background: linear-gradient(90deg, #06010d 0%, #060321 100%);
+  letter-spacing: -0.03em;
 }
 
 a {
@@ -24,27 +25,34 @@ svg * {
   transition-duration: var(--transition-duration);
 }
 
-h1,
-.h1,
 h2,
 .h2,
 h3,
 .h3 {
-  font-weight: 400;
-  font-family: var(--font-family-accent);
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-	line-height: 1.1;
-	letter-spacing: -0.03em;
+  color: var(--color-gray);
 }
 
 h1,
 .h1 {
   @include fluid-text(80, 28);
+
+  font-weight: 400;
+  font-family: var(--font-family-accent);
+  text-transform: uppercase;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
 }
 
 h2,
 .h2 {
-  @include fluid-text(64, 24);
+  @include fluid-text(20, 18);
+}
+
+h3,
+.h3 {
+  @include fluid-text(18, 16);
 }
 
 :not(input):focus-visible {

@@ -1,30 +1,46 @@
 @use "~/styles/helpers" as *;
 
 .section {
-	margin-bottom: rem(100);
+  margin-bottom: rem(120);
 
-	@include tablet {
-		margin-bottom: rem(80);
-	}
+  @include tablet {
+    margin-bottom: rem(80);
+  }
 
-	@include mobile {
-		margin-bottom: rem(70);
-	}
+  @include mobile {
+    margin-bottom: rem(70);
+  }
 
-	&__header {
-		margin-bottom: rem(60);
+  &__header {
+    margin-bottom: rem(72);
+		display: flex;
+		justify-content: space-between;
+		align-items: end;
 
-		@include desktop {
-			margin-bottom: rem(50);
-		}
+    @include tablet {
+      margin-bottom: rem(48);
+    }
+
+    @include mobile {
+      margin-bottom: rem(32);
+    }
+  }
+
+	&__title {
+		margin-bottom: rem(20);
 
 		@include tablet {
-			margin-bottom: ren(40);
-			text-align: center;
-		}
-
-		@include mobile {
-			margin-bottom: rem(30);
+			margin-bottom: rem(16);
 		}
 	}
+
+  &__subtitle, &__right-content {
+		@include fluid-text(48, 24);
+
+    font-weight: 400;
+    font-family: var(--font-family-accent);
+    text-transform: uppercase;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
 }
