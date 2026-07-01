@@ -2,7 +2,6 @@ import "./Gallery.scss";
 import "swiper/css";
 
 import Section from "~/layouts/Section/Section";
-import exampleImageSrc from "~/assets/images/gallery example.jpg";
 import exampleImageSrc2 from "~/assets/images/gallery example 2.jpg";
 import exampleImageSrc3 from "~/assets/images/gallery example 3.jpg";
 import exampleImageSrc4 from "~/assets/images/gallery example 4.jpg";
@@ -14,16 +13,16 @@ import GalleryModal from "~/components/GalleryModal/GalleryModal";
 import { useState } from "react";
 
 const IMAGES = [
-  {
-    imagesSrc: [
-      exampleImageSrc,
-      exampleImageSrc,
-      exampleImageSrc,
-      exampleImageSrc,
-    ],
-    title: "Ход строительства",
-    value: "building",
-  },
+  // {
+  //   imagesSrc: [
+  //     exampleImageSrc,
+  //     exampleImageSrc,
+  //     exampleImageSrc,
+  //     exampleImageSrc,
+  //   ],
+  //   title: "Ход строительства",
+  //   value: "building",
+  // },
   {
     imagesSrc: [
       exampleImageSrc2,

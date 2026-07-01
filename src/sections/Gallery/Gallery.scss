@@ -1,19 +1,36 @@
 @use "~/styles/helpers" as *;
 
 .gallery {
-  width: 100%;
+  &__item {
+		width: 100%;
+		min-height: rem(300);
+		height: auto;
+
+    // &:nth-child(1) {
+    //   transform: perspective(1000px) rotateY(-12deg) rotateX(2deg);
+    //   transform-origin: center right;
+    // }
+
+    // &:nth-child(3) {
+    //   transform: perspective(1000px) rotateY(12deg) rotateX(2deg);
+    //   transform-origin: center left;
+    // }
+  }
 
   &__list {
-    display: grid;
-    grid-template-columns: repeat(2, rem(400));
-    grid-template-rows: repeat(2, rem(300));
-    gap: rem(20);
-    margin-inline: auto;
+    // display: grid;
+    // grid-template-columns: repeat(2, rem(400));
+    // grid-template-rows: repeat(2, rem(300));
+    // gap: rem(20);
+    // margin-inline: auto;
+		perspective: rem(800);
+		display: flex;
     justify-content: center;
+		column-gap: rem(50);
 
-    @include tablet {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    // @include tablet {
+    //   grid-template-columns: repeat(2, 1fr);
+    // }
   }
 
   &__slider {

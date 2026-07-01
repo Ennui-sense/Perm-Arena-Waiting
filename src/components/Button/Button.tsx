@@ -6,11 +6,15 @@ import ArrowIcon from "~/assets/icons/arrow-right.svg?react";
 interface IButton {
   className?: string;
   children: ReactNode;
+  variant?: "transparent";
 }
 
-const Button = ({ className, children }: IButton) => {
+const Button = ({ className, children, variant }: IButton) => {
   return (
-    <button className={clsx("button", className)} type="button">
+    <button
+      className={clsx("button", className, variant && `button--${variant}`)}
+      type="button"
+    >
       <ArrowIcon />
       {children}
     </button>

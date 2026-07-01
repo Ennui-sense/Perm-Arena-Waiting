@@ -1,6 +1,6 @@
-import type { MenuLink } from "~/types"
+import type { MenuLinkType } from "~/types"
 
-export const MenuLinksData: MenuLink[] = [
+export const menuLinksData: MenuLinkType[] = [
   {
     label: "Галерея",
     id: 1,

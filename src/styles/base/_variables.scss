@@ -5,7 +5,8 @@
   --color-gray: #a2a2a2;
   --color-gray-dark: #282828;
   // --color-accent: #6c42cb;
-  --color-accent: #ea0a0a;
+  // --color-accent: #ea0a0a;
+  --color-accent: #940000;
 
   --font-family-accent: "Unbounded", sans-serif;
   --font-family-base: "Manrope", sans-serif;
@@ -16,18 +17,18 @@
   --border-radius: #{rem(20)};
   --border-radius-large: #{rem(30)};
 
-  --button-height: #{rem(60)};
+  --button-height: #{rem(72)};
 
   --border: #{rem(1)} solid var(--color-light);
 
   --transition-duration: 0.25s;
 
   @include tablet {
-    --button-height: #{rem(50)};
+    --button-height: #{rem(60)};
     --border-radius: #{rem(16)};
   }
 
   @include mobile {
-    --button-height: #{rem(40)};
+    --button-height: #{rem(50)};
   }
 }

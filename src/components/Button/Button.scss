@@ -13,22 +13,45 @@
   column-gap: rem(20);
   letter-spacing: 0.01em;
   text-transform: uppercase;
-	border-radius: rem(10);
-	
+  position: relative;
+
+  &--transparent {
+    background-color: transparent;
+    border: var(--border);
+
+    &::after {
+      content: "";
+      width: 0;
+      height: 100%;
+      background-color: var(--color-accent);
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+			transition-duration: var(--transition-duration);
+    }
+
+    @include hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
   & svg {
     transform: rotate(45deg);
 
-		@include mobile {
-			width: rem(20);
-		}
+    @include mobile {
+      width: rem(20);
+    }
   }
 
-	@include tablet {
-		padding-inline: rem(24);
-	}
+  @include tablet {
+    padding-inline: rem(24);
+  }
 
-	@include mobile {
-		padding-inline: rem(16);
-		column-gap: rem(10);
-	}
+  @include mobile {
+    padding-inline: rem(16);
+    column-gap: rem(10);
+  }
 }
