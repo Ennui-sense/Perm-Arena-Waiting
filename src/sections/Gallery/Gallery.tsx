@@ -63,8 +63,8 @@ const Gallery = () => {
   return (
     <Section
       sectionName="gallery"
-      title="Новости"
-      subtitle="Главное о стройке"
+      title="Галерея"
+      subtitle="ОБРАЗ АРЕНЫ"
       withHeaderCenter
     >
       <div className="gallery__inner">

@@ -7,7 +7,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper/types";
 import CrossIcon from "~/assets/icons/cross.svg?react";
 import { useState } from "react";
-import { Navigation } from "swiper/modules";
 import ArrowIcon from "~/assets/icons/arrow-slider.svg?react";
 
 interface IGalleryModal {
@@ -25,18 +24,27 @@ const GalleryModal = ({ isOpen, closeModal, imagesSrc }: IGalleryModal) => {
       className="gallery-modal"
       onRequestClose={closeModal}
     >
-      <div className="gallery-modal__inner container">
+      <div className="gallery-modal__inner">
         <Swiper
           className="gallery-modal__slider"
           onSwiper={setSwiper}
-          modules={[Navigation]}
+          slidesPerView={2.2}
+          centeredSlides
+          spaceBetween={128}
+          speed={500}
+          loop
+          slideActiveClass="gallery-modal__slide--active"
+          slideNextClass="gallery-modal__slide--next"
+          slidePrevClass="gallery-modal__slide--prev"
         >
-          {imagesSrc &&
-            imagesSrc.map((imageSrc) => (
-              <SwiperSlide className="gallery-modal__slide">
-                <img src={imageSrc} alt="" className="gallery-modal__image" />
-              </SwiperSlide>
-            ))}
+          {imagesSrc?.map((imageSrc, index) => (
+            <SwiperSlide
+              className="gallery-modal__slide"
+              key={`${imageSrc}-${index}`}
+            >
+              <img src={imageSrc} alt="" className="gallery-modal__image" />
+            </SwiperSlide>
+          ))}
         </Swiper>
 
         <div className="gallery-modal__navigation">

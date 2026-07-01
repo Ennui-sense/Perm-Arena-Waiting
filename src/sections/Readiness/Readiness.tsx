@@ -7,7 +7,7 @@ import Section from "~/layouts/Section/Section";
 import VisualizationIcon from "~/assets/icons/visualization.svg?react";
 import { useInView } from "react-intersection-observer";
 
-const READINESS_PERCENT = 32;
+const READINESS_PERCENT = 84;
 
 const clampPercent = (value: number) => Math.min(Math.max(value, 0), 100);
 
